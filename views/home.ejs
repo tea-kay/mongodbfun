@@ -9,13 +9,17 @@
   </head>
   <body>
     <div class="container">
-      <form class="form-signin">
+      <div class="form-signin">
         <h2 class="form-signin-heading">Add Item</h2>
         <label for="inputItem" class="sr-only">A new item to do</label>
         <input type="text" id="inputItem" class="form-control" placeholder="Pick up dry cleaning" required autofocus>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Add Item</button>
-      </form>
+        <button id="addItem" class="btn btn-lg btn-primary btn-block" type="button">Add Item</button>
+      </div>
+      <div>
+        <ul class="list"></ul>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
