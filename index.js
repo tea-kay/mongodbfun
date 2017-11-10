@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const Item = require('./models/Item')
 
 const app = express()
 
@@ -19,7 +20,14 @@ app.get('/', (req, res) => {
   res.render('home')
 })
 
+app.post('/add', (req, res) => {
+  const { item } = req.body
+  const newItem = new Item({ item })
 
+  newItem.save(err => {
+    res.send({ success: true, item: newItem.item })
+  })
+})
 
 const port = process.env.PORT || 3030
 app.listen(port, () => {
