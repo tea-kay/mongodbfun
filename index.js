@@ -20,6 +20,12 @@ app.get('/', (req, res) => {
   res.render('home')
 })
 
+app.get('/fetch', (req, res) => {
+  Item.find({}, (err, items) => {
+    res.send({ success: true, items })
+  })
+})
+
 app.post('/add', (req, res) => {
   const { item } = req.body
   const newItem = new Item({ item })
